@@ -7,3 +7,8 @@ Example usage ig:
 ```
 docker run -d --name doom_ascii -p 8008:8008 -v /path/to/doom.wad:/wad/doom.wad doom_ascii
 ```
+
+Building:
+```
+docker build -t doom_ascii .
+```
