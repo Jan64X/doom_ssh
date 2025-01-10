@@ -12,3 +12,17 @@ Building:
 ```
 docker build -t doom_ascii .
 ```
+
+I should propably add a a reminder how i built these images and pushed em...
+```
+DOCKERHUB_USERNAME="user"  # lowercase username
+GITHUB_USERNAME="user"     # lowercase username
+IMAGE_NAME="doom_ssh"
+
+docker buildx build --platform linux/amd64,linux/arm64 \
+  --tag ${DOCKERHUB_USERNAME}/${IMAGE_NAME}:amd64 \
+  --tag ${DOCKERHUB_USERNAME}/${IMAGE_NAME}:arm64 \
+  --tag ghcr.io/${GITHUB_USERNAME}/${IMAGE_NAME}:amd64 \
+  --tag ghcr.io/${GITHUB_USERNAME}/${IMAGE_NAME}:arm64 \
+  --push .
+```
